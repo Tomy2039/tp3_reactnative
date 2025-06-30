@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeScreen from '../pages/homeScreen';
 import ProfileScreen from '../pages/profileScreen';
 import SettingsScreen from '../pages/settingsScreen';
+import TaskStack from './taskStack'
 
 const Tab = createBottomTabNavigator();
 
@@ -46,6 +47,15 @@ export default function HomeTabs() {
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="cog" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+            name="Tareas"
+            component={TaskStack}
+            options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="clipboard-list" color={color} size={size} />
             ),
           }}
         />
